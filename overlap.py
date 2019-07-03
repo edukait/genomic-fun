@@ -3,6 +3,8 @@ Script for counting the total number of overlaps betwen two given genetic
 regions.
 """
 
+import sys
+
 # global variable that keeps track of all the chrormosomes in both files
 Chromosomes = []
 
@@ -144,6 +146,6 @@ def find_overlap(exons1, exons2):
     return overlap
 
 if  __name__ == '__main__':
-    exons_1 = format_file('human_1.txt')
-    exons_2 = format_file('human_2.txt')
-    print(find_overlap(exons_1, exons_2))
+    exons_1 = format_file(sys.argv[1])
+    exons_2 = format_file(sys.argv[2])
+    print(find_overlap(exons_1, exons_2), 'overlaps.')
